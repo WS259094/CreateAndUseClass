@@ -33,6 +33,8 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
             this.lblAge = new System.Windows.Forms.Label();
+            this.txtNamePass = new System.Windows.Forms.TextBox();
+            this.txtAgePass = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtName
@@ -77,11 +79,27 @@
             this.lblAge.TabIndex = 4;
             this.lblAge.Text = "Age";
             // 
+            // txtNamePass
+            // 
+            this.txtNamePass.Location = new System.Drawing.Point(258, 45);
+            this.txtNamePass.Name = "txtNamePass";
+            this.txtNamePass.Size = new System.Drawing.Size(100, 20);
+            this.txtNamePass.TabIndex = 5;
+            // 
+            // txtAgePass
+            // 
+            this.txtAgePass.Location = new System.Drawing.Point(258, 91);
+            this.txtAgePass.Name = "txtAgePass";
+            this.txtAgePass.Size = new System.Drawing.Size(100, 20);
+            this.txtAgePass.TabIndex = 6;
+            // 
             // CreateUseClass1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(219, 238);
+            this.ClientSize = new System.Drawing.Size(417, 238);
+            this.Controls.Add(this.txtAgePass);
+            this.Controls.Add(this.txtNamePass);
             this.Controls.Add(this.lblAge);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.btnSubmit);
@@ -101,6 +119,8 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblAge;
+        private System.Windows.Forms.TextBox txtNamePass;
+        private System.Windows.Forms.TextBox txtAgePass;
     }
 }
 

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using CreateAndUseClass.UserBehaviors;
+
 namespace CreateAndUseClass
 {
     public partial class CreateUseClass1 : Form
@@ -17,35 +19,15 @@ namespace CreateAndUseClass
             InitializeComponent();
         }
 
+       
         // clsUser starts here. it gets and sets the users name and age for later use in the program
-        class clsUser
-        {
-            private string m_sName;
-            private int m_iAge;
-
-            public string GetName(string sName)
-            {
-                return m_sName;
-            }
-            
-            public void SetName(string sName)
-            {
-                m_sName = sName;
-            }
-
-             public int GetAge(int iAge)
-            {
-                return m_iAge;
-            }
-            public void SetAge(int iAge)
-            {
-                m_iAge = iAge;
-            }
-        }
+        
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
-            clsUser objUser = new clsUser();
+            clsUserDetails objUser = new clsUserDetails();
+
+           
             if(txtName.Text == "" || txtAge.Text == "")
             {
                 MessageBox.Show("Error. Please fill in all details");
@@ -57,7 +39,7 @@ namespace CreateAndUseClass
 
                 /*Testing if the Age is a number using try parse, which checks if the text is in the correct format, e.g. int,
                  * and parse, which converts the text to the correct format */
-                if(int.TryParse(txtAge.Text, out int iOut))
+                if(int.TryParse(txtAge.Text, out int iOut)&& txtAge.Text == "")
                 {
                     objUser.SetAge(int.Parse(txtAge.Text));
                 }
@@ -67,9 +49,12 @@ namespace CreateAndUseClass
                     MessageBox.Show("Error. Age must be a number");
                 }
             }
-            
 
-            Console.Beep(20, 20);
+            txtNamePass.Text = objUser.GetName();
+            txtAgePass.Text = Convert.ToString(objUser.GetAge());
+
+            // makes the console beep, 1st num is frequency, 2nd is duration
+            Console.Beep(300, 200);
         }
     }
 }
